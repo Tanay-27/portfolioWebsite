@@ -10,9 +10,11 @@ import Blog from './components/Blog';
 
 function App() {
   return (
+    <div id="mainElement">
     <BrowserRouter>
      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <Header />
+      <button className="btn btn-primary" onClick={toggleDarkMode}>Drak Mode</button>
       <Routes>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -23,7 +25,14 @@ function App() {
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 
+let darkMode = false;
+function toggleDarkMode(){
+  darkMode = !darkMode;
+  if(darkMode) document.getElementById('mainElement').classList.add('dark-mode');
+  else document.getElementById('mainElement').classList.remove('dark-mode');
+}
 export default App;

@@ -1,5 +1,5 @@
 import React from 'react'
-import './Home.css'
+import './Home.scss'
 import { useTypingEffect } from '../hooks/typing-effect'
 
 function Home() {

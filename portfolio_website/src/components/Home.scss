@@ -30,5 +30,15 @@
     }
 }
 .homepage .content .name span{
-    color: rgb(206, 172, 0);
+    color: rgb(194, 162, 0);
 }
+
+.dark-mode{
+    .blinking-cursor::after{
+        background-color: #eeeeee;
+    }
+    .homepage .content{
+        color: #eeeeee
+    }   
+    
+} 
