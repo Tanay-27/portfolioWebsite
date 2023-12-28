@@ -7,14 +7,17 @@ import About from './components/About';
 import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
 import Blog from './components/Blog';
+import Contact from './components/Contact';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div id="mainElement">
     <BrowserRouter>
+    
      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <Header />
-      <button className="btn btn-primary" onClick={toggleDarkMode}>Drak Mode</button>
+      {/* <button className="btn btn-primary" onClick={toggleDarkMode}>Drak Mode</button> */}
       <Routes>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -22,6 +25,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/games" element={<TicTacToe />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
