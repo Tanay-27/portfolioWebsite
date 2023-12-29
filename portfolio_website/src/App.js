@@ -17,6 +17,7 @@ function App() {
     
      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <Header />
+      {/* <div className="mouse-dot"></div> */}
       {/* <button className="btn btn-primary" onClick={toggleDarkMode}>Drak Mode</button> */}
       <Routes>
         <Route index element={<Home />} />
@@ -39,4 +40,15 @@ function toggleDarkMode(){
   if(darkMode) document.getElementById('mainElement').classList.add('dark-mode');
   else document.getElementById('mainElement').classList.remove('dark-mode');
 }
+
+
+// document.addEventListener('mousemove', (event) => {
+//   const dot = document.querySelector('.mouse-dot');
+//   if (dot) {
+//     // Set the dot's position to the mouse coordinates
+//     dot.style.left = event.pageX + 'px';
+//     dot.style.top = event.pageY + 'px';
+//   }
+// });
+
 export default App;

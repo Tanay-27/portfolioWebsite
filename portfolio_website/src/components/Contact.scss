@@ -2,8 +2,10 @@
     width: 100%;
     text-align: center;
     padding: 15px;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 600;
+    color: #747373;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .formContact{
@@ -29,52 +31,58 @@
     padding: 5px;
     .contactItem{
         padding: 10px 5px;
+        display: flex;
+        align-items: center;
         .icon{
             margin-right: 15px;
-            font-size: 20px;
-            border-radius: 25px;
+            font-size: 25px;
+            border-radius: 40px;
             border: 1px solid #cccccc;
-            padding: 7px;
+            padding: 5px 10px;
             color: #747373;
         }
     }
 }
 
+.socialBtns{
+    display: flex;
+    gap:30px;
+    margin-left: 3px;
+    margin-top: 15px;
+}
 
-.social-button {
-    display: inline-block;
+.social-button{
     position: relative;
     padding: 7px;
     color: #747373;
     cursor: pointer;
     border: 1px solid #cccccc;
-    border-radius: 30px;
+    overflow: hidden;
+    width: 48px;
+    transition: width 0.3s ease-in-out;
+    border-radius: 30px;   
+}
+.social-text{
+    position: absolute;
+    top: 22%;
+    // left: 100%;
+    width: 0px;
+    padding-left: 10px;
+    // background-color: #333;
+    color: #747373;
+    font-size: 16px;
+    overflow: hidden;
+    // transition: all 1s ease-in;
 }
 
-.social-button .social-icon{
+.social-icon{
     font-size: 30px;
     margin-left: 3px;
-    transition: all 0.3s ease-in-out;
-}
-
-.social-button span {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 0;
-    height: 100%;
-    background-color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
 }
 
 .social-button:hover{
-    border-radius: 30px;
-    span {
-    width: 100px;
-    }
+    width: 130px;
 }
+.social-button:hover .social-text{
+        width: 100px;
+} 
