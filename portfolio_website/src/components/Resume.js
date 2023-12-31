@@ -41,7 +41,7 @@ const educationData = [
 function Resume() {
   return (
     <div className='resume'>
-      <div className="resumeHeader">Resume</div>
+      <div className="pageHeader">Resume</div>
       <Container>
         <Row>
           <Col md={3} sm={12} className="order-md-first order-sm-last">
@@ -113,6 +113,7 @@ function ResumeHeader({header,icon}) {
 function SkillsComponent({skills}) {
   return (
     <div className='skillsComponent'>
+      <div className="sectionHeader">Skills</div>
       {skills.map( skill => <Skills key={skill.name} {...skill} />)}
     </div>
   )

@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import TicTacToe from './Games/TicTacToe';
 import Header from './components/Header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -20,8 +20,7 @@ function App() {
     
      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <Header />
-      {/* <div className="mouse-dot"></div> */}
-      {/* <button className="btn btn-primary" onClick={toggleDarkMode}>Drak Mode</button> */}
+      <div >
       <Routes>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -33,6 +32,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
       </Routes>
+      </div>
     </BrowserRouter>
     </div>
   );

@@ -9,6 +9,7 @@ import { faSun } from '@fortawesome/free-regular-svg-icons';
 function Header() {
   const { theme, toggleTheme } = useTheme();
   return (
+    <>
     <div className='header'>
       <div className="headerBtns">
       <div className="headerElement logo">LOGO</div>
@@ -24,6 +25,8 @@ function Header() {
         <div className="headerElement" onClick={toggleTheme}><FontAwesomeIcon icon={theme==='dark'?faMoon:faSun} /></div>
       </div>   
     </div>
+    <div className="blankSpace"></div>
+    </>
   )
 }
 

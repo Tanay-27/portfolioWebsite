@@ -30,18 +30,16 @@
   //   height: 50%;
   // }
   .square {
-    background: #fff;
-    border: 1px solid #999;
     float: left;
-    font-size: 50px;
+    font-size: 60px;
     font-weight: bold;
-    line-height: 75px;
-    height: 75px;
+    line-height: 100px;
+    height: 100px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 75px;
+    width: 100px;
   }
   
   .board-row:after {
@@ -53,14 +51,15 @@
   .status {
     margin-bottom: 50px;
     width: 100%;
-    font-size: 30px;
+    font-size: 40px;
 
   }
   
   .game .button{
     cursor: pointer;
+    font-size: 40px;
     position: relative;
-    transform: translate(40px,-130px);
+    transform: translate(-30px,-170px);
   }
   .game-info {
     margin-left: 50px;
@@ -86,13 +85,12 @@
       height: 350px;
       display: flex;
       flex-direction: column;
-      border: 1px solid #000;
       justify-content: space-between;
 
       .img{
         height: 250px;
         text-align: center;
-        border: 1px solid #000;
+        background-color: #ffffff;
         border-radius: 5px;
 
         img{
@@ -103,7 +101,7 @@
       }
 
       .name{
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 3px;
         font-size: 18px;
         text-align: center;
@@ -126,4 +124,81 @@
   }
 }
 
+.light-mode{
+
+  .status{
+    color: #323232;
+  }
+  .square{
+    background: transparent;
+    border: 1px solid #434343;
+    color: #323232;
+  }
+
+  .game .button{
+    color: #323232;
+  }
+  .gamesComponent{
+    .gamesCardContainer{
+      .gameCard{
+        border: 1px solid #434343;
+  
+        .img{
+          border: 1px solid #9f9f9f;
+        }
+  
+        .name{
+          color: #222222;
+        }
+  
+        .goToGame{
+          color: #222222;
+        }
+        a{
+          text-decoration: none;
+          color: #434343;
+        }
+      }
+    }
+  }
+}
+
+.dark-mode{
+
+  .status{
+    color: #9f9f9f;
+  }
+  .square{
+    background: transparent;
+    border: 1px solid #999999;
+    color: #9f9f9f;
+  }
+
+  .game .button{
+    color: #9f9f9f;
+  }
+  .gamesComponent{
+    .gamesCardContainer{
+      .gameCard{
+        border: 1px solid #cccccc;
+  
+        .img{
+          border: 1px solid #323232;
+        }
+  
+        .name{
+          color: #cccccc;
+        }
+  
+        .goToGame{
+          color: #cccccc;
+        }
+        a{
+          text-decoration: none;
+          color: #cccccc;
+        }
+      }
+    }
+  }
+}
 

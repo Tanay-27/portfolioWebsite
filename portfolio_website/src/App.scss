@@ -1,0 +1,50 @@
+.dark-mode,.light-mode{
+    transition: color 0.75s ease-in-out, background-color 0.75s ease-in-out;
+}
+// .light-mode{
+//   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+// }
+#mainElement{
+  max-height: 100%;
+  min-height: 100vh;
+}
+.mouse-dot {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none; /* Ensure the dot doesn't interfere with mouse events */
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    transition: transform 0.4s ease-in; /* Add a smooth transition effect */
+  }
+  
+  .dark-mode{
+    .mouse-dot{
+      background-color: #0000fa;
+    }   
+
+    .pageHeader{
+      color: #eeeeee;
+    }
+}
+  
+  .light-mode{
+    background-color: #eeeeee;
+    .mouse-dot{
+      background-color: #000080;
+    }
+    .pageHeader{
+      color: #505050;
+    }
+}
+
+
+
+  .pageHeader{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px 0px;
+  }

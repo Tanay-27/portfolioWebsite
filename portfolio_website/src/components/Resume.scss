@@ -1,16 +1,7 @@
-.resumeHeader{
-    width: 100%;
-    text-align: center;
-    padding: 15px;
-    font-size: 30px;
-    font-weight: 600;
-    color: #747373;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+
 .sectionContent{
     margin-left: 10px;
     padding-left: 10px;
-    border-left: 3px solid #000;
 }
 .workExpItem{
     margin-bottom: 8px;
@@ -31,7 +22,7 @@
 .headerLine{
     display: flex;
     justify-content: space-between;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
     padding-bottom: 3px;
 
@@ -41,8 +32,6 @@
         width: 12px;
         height: 12px;
         transform: translate(-17px,8px);
-        background-color: #000000;
-        border: 1px solid #000000;
         border-radius: 50%;
     }
 }
@@ -68,8 +57,6 @@
         width: 10px;
         height: 10px;
         transform: translate(-16px,8px);
-        background-color: #000000;
-        border: 1px solid #000000;
         border-radius: 50%;
     }
 
@@ -84,6 +71,10 @@
    }
 .p1{
   padding: 7px 0px;
+
+  .institute{
+    font-weight: 600;
+  }
 }
 .skillsComponent{
     display: flex;
@@ -120,13 +111,11 @@
   .background {
     height: 100%;
     width: 100%;
-    background-color: #ccc;
     position: absolute;
   }
   
   .filler {
     height: 100%;
-    background-color: #0054d1; /* or your desired color */
     transition: width 1s ease-in-out;
     z-index: 1;
     border-radius: 2px;
@@ -141,5 +130,66 @@
     from {
       width: 0;
     }
+  }
+
+  .light-mode{
+    .sectionHeader, .designationSkills, .eduItem .perc, .eduItem .degree, .nameNPerc .name{
+      color: #222222;
+    }
+
+    .workExpItem .details, .eduItem .p2, .nameNPerc .perc{
+      color: #434343;
+    }
+
+    .workExpItem .headerLine, .eduItem .institute{
+      color: #000080;
+    }
+    .headerLine::before, .eduItem::before{
+      background-color: #9f9f9f;
+      border: 1px solid #9f9f9f;
+    }
+    .sectionContent{
+     border-left: 3px solid #9f9f9f;
+    }
+
+    .skill-bar{
+      .background{
+        background-color: #cccccc;
+      }
+      .filler{
+        background-color: #000080;
+      }
+    }
+  }
+
+  .dark-mode{
+    .sectionHeader, .designationSkills , .eduItem .perc, .eduItem .degree, .nameNPerc .name{
+      color: #cccccc;
+    }
+
+    .workExpItem .details , .eduItem .p2, .nameNPerc .perc{
+      color: #999999;
+    }
+
+    .workExpItem .headerLine, .eduItem .institute{
+      color: #0000fa;
+    }
+    .headerLine::before, .eduItem::before{
+      background-color: #323232;
+      border: 1px solid #323232;
+  }
+
+  .sectionContent{
+    border-left: 3px solid #323232;
+   }
+
+   .skill-bar{
+    .background{
+      background-color: #323232;
+    }
+    .filler{
+      background-color: #0000fa;
+    }
+  }
   }
   

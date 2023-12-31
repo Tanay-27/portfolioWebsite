@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Contact() {
     return (
         <div className="contactContent">
-            <div className="headerContact">Contact</div>
+            <div className="pageHeader">Contact</div>
             <Container fluid>
                 <Row>
                     <Col><ContactMe /></Col>
@@ -56,7 +56,7 @@ function ContactMe() {
                             onChange={handleChange}
                         />
                 </div>
-                <div className="btn btn-primary" onClick={handleSubmit}>
+                <div className="btn btn-primary sendBtn" onClick={handleSubmit}>
                     Send Message <FontAwesomeIcon icon={faPaperPlane} />
                 </div>
             </form>
@@ -71,19 +71,19 @@ function ContactInfo() {
         <ContactItem icon={faEnvelope} details={'tanayshah027@gmail.com'} />
         <div className='socialBtns'>
       <SocialButton
-        href="https://www.linkedin.com/in/your-linkedin-profile"
+        href="https://www.linkedin.com/in/tanayshah27"
         imgSrc={faLinkedin}
         alt="LinkedIn"
         text="LinkedIn"
       />
       <SocialButton
-        href="https://github.com/your-github-profile"
+        href="https://github.com/Tanay-27"
         imgSrc={faGithub}
         alt="GitHub"
         text="GitHub"
       />
       <SocialButton
-        href="https://www.instagram.com/your-instagram-profile"
+        href="https://www.instagram.com/tanay.27"
         imgSrc={faInstagram}
         alt="Instagram"
         text="Instagram"

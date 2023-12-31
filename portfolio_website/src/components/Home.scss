@@ -2,7 +2,6 @@
     content:"_";
     font-weight: 1200;
     animation:blink 1.3s step-start infinite;
-    background-color: black;
 }
 
 @keyframes blink {
@@ -32,11 +31,7 @@
     .line{
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 20px;
-        color: #747373;
     }
-}
-.homepage .content .name span{
-    color: rgb(194, 162, 0);
 }
 
 .dark-mode{
@@ -44,7 +39,32 @@
         background-color: #eeeeee;
     }
     .homepage .content{
-        color: #eeeeee
-    }   
+        color: #eeeeee;
+
+        .line{
+            color: #c0c0c0;
+        }
+    }
     
+    .homepage .content .name span{
+        color: #0000fa;
+    }     
 } 
+
+.light-mode{
+    .blinking-cursor::after{
+        background-color: #505050;
+    }
+    .homepage .content{
+        color: #505050;
+
+        .line{
+            color: #626262;
+        }
+    }
+
+    .homepage .content .name span{
+        color: #000080 ;
+    }
+
+}

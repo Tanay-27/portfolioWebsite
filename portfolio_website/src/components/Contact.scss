@@ -1,29 +1,31 @@
-.headerContact{
-    width: 100%;
-    text-align: center;
-    padding: 15px;
-    font-size: 30px;
-    font-weight: 600;
-    color: #747373;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .formContact{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid #dfdfdf;
     .inputField{
         padding: 5px 2px;
     }
+    form{
+        width: 100%;
+        padding: 0px 5px;
+    }
     .inputField input,textarea{
         width: 100%;
-        border: .5px solid #dfdfdf;
         border-radius: 5px;
         background-color: transparent;
         opacity: 0.7;
         padding: 3px 5px;
 
+    }
+
+    .sendBtn{
+        background-color: transparent;
+        opacity: 0.7;
+
+        &:hover{
+            background-color: transparent;
+            opacity: 1;
+        }
     }
 }
 
@@ -37,10 +39,82 @@
             margin-right: 15px;
             font-size: 25px;
             border-radius: 40px;
-            border: 1px solid #cccccc;
             padding: 5px 10px;
-            color: #747373;
         }
+        .info{
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+    }
+}
+
+.light-mode{
+    .formContact{
+        border-right: 1px solid #434343;
+        .inputField input,textarea{
+            border: .5px solid #434343;
+            color: #434343;
+        }
+
+        .sendBtn{
+            border: 1px solid #434343;
+            color: #434343;
+        }
+    }
+    .contactInfo .contactItem .icon{
+        border: 1px solid #434343;
+        color: #434343 ;
+    }
+    .contactInfo .contactItem .info{
+        color: #434343;
+    }
+
+    .social-button{
+        border: 1px solid #434343;
+        color: #434343;
+    }
+    .social-text{
+        color: #434343;
+    }
+
+    .contactContent :hover{
+        color: #000080;
+        border: #000080;
+    }
+}
+
+.dark-mode{
+    .formContact{
+        border-right: 1px solid #999999;
+        .inputField input,textarea{
+            border: .5px solid #999999;
+            color: #999999;
+        }
+
+        .sendBtn{
+            border: 1px solid #999999;
+            color: #999999;
+        }
+    }
+    .contactInfo .contactItem .icon{
+        border: 1px solid #999999;
+        color: #999999 ;
+    }
+    .contactInfo .contactItem .info{
+        color: #999999;
+    }
+
+    .social-button{
+        border: 1px solid #999999;
+        color: #999999;
+    }
+    .social-text{
+        color: #999999;
+    }
+
+    .contactContent :hover{
+        color: #0000fa;
+        border: #0000fa;
     }
 }
 
@@ -54,9 +128,7 @@
 .social-button{
     position: relative;
     padding: 7px;
-    color: #747373;
     cursor: pointer;
-    border: 1px solid #cccccc;
     overflow: hidden;
     width: 48px;
     transition: width 0.3s ease-in-out;
@@ -65,14 +137,10 @@
 .social-text{
     position: absolute;
     top: 22%;
-    // left: 100%;
     width: 0px;
     padding-left: 10px;
-    // background-color: #333;
-    color: #747373;
     font-size: 16px;
     overflow: hidden;
-    // transition: all 1s ease-in;
 }
 
 .social-icon{

@@ -39,6 +39,42 @@
 
 }
 
+.light-mode{
+    .reposList{
+        .repo{
+            border: 1px solid #434343;
+            .name{
+                color: #000080;
+            }
+
+            .description{
+                color: #222222;
+            }
+            .viewMore , a{
+                color: #434343;
+            }
+        }
+    }
+}
+
+.dark-mode{
+    .reposList{
+        .repo{
+            border: 1px solid #434343;
+            .name{
+                color: #0000fa;
+            }
+
+            .description{
+                color: #cccccc;
+            }
+            .viewMore , a{
+                color: #999999;
+            }
+        }
+    }
+}
+
 
 
 
