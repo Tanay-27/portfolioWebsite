@@ -13,8 +13,8 @@
     border-left: 3px solid #000;
 }
 .workExpItem{
-    margin-bottom: 5px;
-    padding-bottom: 5px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
 }
 
 .resume{
@@ -33,6 +33,7 @@
     justify-content: space-between;
     font-weight: 500;
     font-size: 20px;
+    padding-bottom: 3px;
 
     &::before{
         content: "";
@@ -49,6 +50,7 @@
 .designationSkills{
     font-weight: 500;
     font-size: 18px;
+    padding-bottom: 3px;
 }
 
 .details{
@@ -80,7 +82,9 @@
 .eduItem:not(:last-child){
        margin-bottom: 10px;
    }
-
+.p1{
+  padding: 7px 0px;
+}
 .skillsComponent{
     display: flex;
     height: 100%;
@@ -100,6 +104,7 @@
 
     .name{
         font-weight: 500;
+        font-size: 20px;
     }
     .perc{
         font-size: 12px;
@@ -107,7 +112,8 @@
   }
 
   .progress-bar {
-    height: 7px;
+    border-radius: 2px;
+    height: 9px;
     position: relative;
   }
   
@@ -123,6 +129,7 @@
     background-color: #0054d1; /* or your desired color */
     transition: width 1s ease-in-out;
     z-index: 1;
+    border-radius: 2px;
   }
   
   /* Animation to set initial width */

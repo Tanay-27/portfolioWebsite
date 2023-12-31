@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+    padding: 0;
+  }
+  
+  code {
+    font-size: 1.2em;
+  }
+  
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+    padding: 0;
+  }
+
+  .game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  // .game-board{
+  //   width: 50%;
+  //   height: 50%;
+  // }
+  .square {
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 75px;
+    height: 75px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 75px;
+  }
+  
+  .board-row:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+  
+  .status {
+    margin-bottom: 50px;
+    width: 100%;
+    font-size: 30px;
+
+  }
+  
+  .game .button{
+    cursor: pointer;
+    position: relative;
+    transform: translate(40px,-130px);
+  }
+  .game-info {
+    margin-left: 50px;
+  }
+  
+
+
+
+.gamesComponent{
+
+  .gamesCardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    &> *{
+      padding: 5px; 
+      margin: 5px 15px;
+      border-radius: 5px;
+    }
+    .gameCard{
+      width: 30%;
+      min-width: 100px;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #000;
+      justify-content: space-between;
+
+      .img{
+        height: 250px;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 5px;
+
+        img{
+          width: 98%;
+          height: auto;
+          max-height: 100%;
+        }
+      }
+
+      .name{
+        font-weight: 600;
+        letter-spacing: 3px;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .goToGame{
+        text-align: end;
+        font-size: 16px;
+        padding-right: 5px;
+        cursor: pointer;
+      }
+
+      .disabled{
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: 0.5;
+        color: #999 !important;
+      }
+    }
+  }
+}
+
+

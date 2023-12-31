@@ -1,11 +1,13 @@
-import './gamesStyle.css'
 import { useState } from 'react';
+import './gamesStyle.scss';
+import { faRepeat} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Square({value, onSquareClick}){
     return <button className="square" onClick={onSquareClick} >{value}</button>; 
 }
 
-function Board({isXNext, squares, onPlay}) {
+function Board({isXNext, squares, onPlay,reset}) {
     const winner = calculateWinner(squares);
     function handleClick(i){
         if( winner || squares[i]) return;
@@ -13,9 +15,11 @@ function Board({isXNext, squares, onPlay}) {
         nextSquares[i] = isXNext?"X":"O";
         onPlay(nextSquares);
     }
+
     return (
         <>
-        <div className="status">{winner?"Winner: "+winner:"Next Player: "+(isXNext?"X":"O") }</div>
+        <div className="status">{winner?"Winner: "+winner:"Next Player: "+(isXNext?"X":"O") } </div>
+        <div className="boardCnntainer">
         <div className="board-row">
           <Square value={squares[0]} onSquareClick={() => handleClick(0)}/>
           <Square value={squares[1]} onSquareClick={() => handleClick(1)}/>
@@ -30,6 +34,7 @@ function Board({isXNext, squares, onPlay}) {
           <Square value={squares[6]} onSquareClick={() => handleClick(6)}/>
           <Square value={squares[7]} onSquareClick={() => handleClick(7)}/>
           <Square value={squares[8]} onSquareClick={() => handleClick(8)}/>
+        </div>
         </div>
       </>
     );
@@ -51,18 +56,19 @@ export default function Game(){
         setCurrentMove(nextMove);
     }  
 
-    const moves = history.map((square, move) => {
-        return (
-            <li key={move}><button onClick={() => jumpTo(move)}>{move>0?`Go to move #${move}`:"Go to game start"}</button></li>
-        );
-    });
+    // const moves = history.map((square, move) => {
+    //     return (
+    //         <li key={move}><button onClick={() => jumpTo(move)}>{move>0?`Go to move #${move}`:"Go to game start"}</button></li>
+    //     );
+    // });
 
     return (
         <div className="game">
             <div className="game-board"> <Board isXNext={isXNext} squares={currentSquares} onPlay={handlePlay} /></div>
-            <div className="game-info">
+            <span className="button" onClick={() => jumpTo(0)}><FontAwesomeIcon icon={faRepeat} /></span>
+            {/* <div className="game-info">
                 <ol>{moves}</ol>
-            </div>
+            </div> */}
         </div>
     );
   }

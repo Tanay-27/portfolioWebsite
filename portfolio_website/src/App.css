@@ -13,3 +13,12 @@
     z-index: 999;
     transition: transform 0.4s ease-in; /* Add a smooth transition effect */
   }
+
+
+  .pageHeader{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px 0px;
+  }
