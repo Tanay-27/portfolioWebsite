@@ -17,7 +17,7 @@ function Header() {
       {/* <div className="headerElement"><Link to="/about">About</Link></div> */}
       <div className="headerElement"><Link to="/resume">Resume</Link></div>
       <div className="headerElement"><Link to="/games">Games</Link></div>
-      <div className="headerElement"><Link to="/portfolio">Portfolio</Link></div>
+      {/* <div className="headerElement"><Link to="/portfolio">Portfolio</Link></div> */}
       <div className="headerElement"><Link to="/contact">Contact</Link></div>
       {/* <div className="headerElement"><Link to="/blog">Blog</Link></div> */}
         </div>

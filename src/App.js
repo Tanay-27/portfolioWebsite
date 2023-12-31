@@ -1,7 +1,7 @@
 import './App.scss';
 import TicTacToe from './Games/TicTacToe';
 import Header from './components/Header';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import About from './components/About';
 import Resume from './components/Resume';
@@ -16,7 +16,7 @@ function App() {
   const { theme } = useTheme();
   return (
     <div id="mainElement" className={theme === 'light' ? 'light-mode' : 'dark-mode' }>
-    <BrowserRouter>
+    <HashRouter>
     
      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <Header />
@@ -33,7 +33,7 @@ function App() {
         <Route path="*" element={<Home />} />
       </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
     </div>
   );
 }
