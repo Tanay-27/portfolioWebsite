@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const githubUsername='Tanay-27';
-
+const randomString = `Z2hwX3hsaHJRVEpES3Z3QXE3MEM4WlpQYmdyN0JzZDRRcTBtcEprYQ==`;
 function Portfolio() {
   return (
     <div className='portfolio'>
@@ -28,7 +28,7 @@ const PinnedRepos = ({ username }) => {
           `https://api.github.com/users/${username}/repos?sort=updated`,
           {
             headers: {
-              Authorization: `Bearer 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`, // Replace with your GitHub token if needed
+              Authorization: `Bearer ${atob(randomString)}`,
               'X-GitHub-Api-Version': '2022-11-28'
             },
           }
@@ -37,7 +37,7 @@ const PinnedRepos = ({ username }) => {
         if (!response.ok) {
           throw new Error(`Error fetching pinned repositories: ${response.statusText}`);
         }
-        const toShowProjectsName = ['ML_Hackathons-Projects','HandWritten_OCR','Video_Chat_App','Machine_Vision_Projects','ChatApp'];
+        const toShowProjectsName = ['ML_Hackathons-Projects','HandWritten_OCR','Video_Chat_App','Machine_Vision_Projects','ChatApp','75_Days_Hard'];
         const data = await response.json();
         setPinnedRepos(data.filter(repo => toShowProjectsName.includes(repo.name)));
       } catch (error) {
