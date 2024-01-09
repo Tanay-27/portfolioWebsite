@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const githubUsername='Tanay-27';
-const randomString = `Z2hwX3hsaHJRVEpES3Z3QXE3MEM4WlpQYmdyN0JzZDRRcTBtcEprYQ==`;
+const randomString = `Z2hwX2E3UWRVQm5pSW9lZmgxMm5KNmZIUXpGT0FMYVA5QTM0TGtqTQ==`;
 function Portfolio() {
   return (
     <div className='portfolio'>
