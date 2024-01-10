@@ -21,7 +21,6 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          npm install gh-pages --save-dev
 
       - name: Build
         run: npm run build
@@ -30,9 +29,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          git push origin main
-          gh-pages -d build
+          npm install -g gh
+          gh auth login --with-token ${{ secrets.GH_TOKEN }}
+          gh repo set-branch -B gh-pages
+          gh repo upload dist
