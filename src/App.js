@@ -46,13 +46,13 @@ function toggleDarkMode(){
 }
 
 
-// document.addEventListener('mousemove', (event) => {
-//   const dot = document.querySelector('.mouse-dot');
-//   if (dot) {
-//     // Set the dot's position to the mouse coordinates
-//     dot.style.left = event.pageX + 'px';
-//     dot.style.top = event.pageY + 'px';
-//   }
-// });
+document.addEventListener('mousemove', (event) => {
+  const dot = document.querySelector('.mouse-dot');
+  if (dot) {
+    // Set the dot's position to the mouse coordinates
+    dot.style.left = event.pageX + 'px';
+    dot.style.top = event.pageY + 'px';
+  }
+});
 
 export default App;

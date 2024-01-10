@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
 const githubUsername='Tanay-27';
-const randomString = `Z2hwX2E3UWRVQm5pSW9lZmgxMm5KNmZIUXpGT0FMYVA5QTM0TGtqTQ==`;
 function Portfolio() {
   return (
     <div className='portfolio'>
@@ -28,7 +26,7 @@ const PinnedRepos = ({ username }) => {
           `https://api.github.com/users/${username}/repos?sort=updated`,
           {
             headers: {
-              Authorization: `Bearer ${atob(randomString)}`,
+              Authorization: `Bearer ${process.env.REACT_APP_GITREPOREAD}`,
               'X-GitHub-Api-Version': '2022-11-28'
             },
           }
