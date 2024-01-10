@@ -14,6 +14,7 @@ import { useTheme } from './Contexts/ThemeContext';
 
 function App() {
   const { theme } = useTheme();
+
   return (
     <div id="mainElement" className={theme === 'light' ? 'light-mode' : 'dark-mode' }>
     <HashRouter>
