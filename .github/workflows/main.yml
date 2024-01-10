@@ -37,6 +37,9 @@ jobs:
             git branch -D gh-pages
           fi
           
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+
           git checkout --orphan gh-pages
           git reset --hard
           mv build/* .
