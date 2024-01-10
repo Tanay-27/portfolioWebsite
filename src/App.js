@@ -38,14 +38,6 @@ function App() {
   );
 }
 
-let darkMode = false;
-function toggleDarkMode(){
-  darkMode = !darkMode;
-  if(darkMode) document.getElementById('mainElement').classList.add('dark-mode');
-  else document.getElementById('mainElement').classList.remove('dark-mode');
-}
-
-
 document.addEventListener('mousemove', (event) => {
   const dot = document.querySelector('.mouse-dot');
   if (dot) {
