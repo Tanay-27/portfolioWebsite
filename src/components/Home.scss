@@ -38,7 +38,8 @@
 
 .homepage .photo{
     padding: 10px 25px;
-    min-width: 300px !important;
+    width: 40%;
+    min-width: 250px !important;
     .img-w {
         width: 100%;
         height: auto;
@@ -176,6 +177,31 @@
       }
 }
 
+
+@media (max-width: 575px) {
+    body{
+        width: 60vh !important;
+    }
+    .homepage .content{
+        width: 90% !important;
+    }
+
+    .homepage .photo{
+        width: 90% !important;
+    }
+    
+    .headerBtns {
+      flex-direction: column;
+      // flex-grow: initial; 
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .blankSpace{
+      height: 0px;
+    }
+  
+  }
  
 .dark-mode{
     .blinking-cursor::after{

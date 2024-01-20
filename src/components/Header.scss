@@ -54,15 +54,18 @@
 
 
   @media (max-width: 575px) {
+    .header{
+      position: relative;
+    }
     .headerBtns {
       flex-direction: column;
-      flex-grow: initial; 
+      // flex-grow: initial; 
       margin-bottom: 10px;
       text-align: center;
     }
 
     .blankSpace{
-      height: 220px;
+      height: 0px;
     }
   
   }
