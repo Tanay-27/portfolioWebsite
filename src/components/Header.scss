@@ -10,6 +10,9 @@
     width: 100%;
     .headerBtns{
       display: flex;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-wrap: wrap;
     }
   }
 
@@ -49,6 +52,20 @@
     background-color: #737373;
   }
 
+
+  @media (max-width: 575px) {
+    .headerBtns {
+      flex-direction: column;
+      flex-grow: initial; 
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .blankSpace{
+      height: 220px;
+    }
+  
+  }
   // .dark-mode{
   //   .header{
   //       background-color: #eeeeee;

@@ -7,23 +7,23 @@
         width: 48%;
         min-width: 100px;
         border: 1px solid hsl(0, 0%, 0%);
-        margin: 5px;
-        padding: 5px;
+        margin: 10px;
+        padding: 10px;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
         .name{
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 600;
             letter-spacing: 1px;
-            padding-bottom: 3px;
+            padding-bottom: 5px;
         }
 
         .description{
             text-align: justify;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         a{
@@ -60,7 +60,7 @@
 .dark-mode{
     .reposList{
         .repo{
-            border: 1px solid #434343;
+            border: 1px solid #aaaaaa;
             .name{
                 color: #0000fa;
             }

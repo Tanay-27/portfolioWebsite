@@ -80,18 +80,20 @@
       border-radius: 5px;
     }
     .gameCard{
-      width: 25%;
-      min-width: 100px;
       height: 350px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
 
       .img{
         height: 250px;
         text-align: center;
         background-color: #ffffff;
         border-radius: 5px;
+        aspect-ratio: 3/2;
+        object-fit: contain;
 
         img{
           width: 98%;
@@ -144,7 +146,8 @@
         border: 1px solid #434343;
   
         .img{
-          border: 1px solid #9f9f9f;
+          border: 1px solid #434343;
+          mix-blend-mode: color-burn;
         }
   
         .name{
@@ -184,6 +187,8 @@
   
         .img{
           border: 1px solid #323232;
+          filter: invert(0.9) !important;
+          mix-blend-mode: lighten;
         }
   
         .name{

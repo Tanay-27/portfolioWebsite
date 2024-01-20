@@ -44,10 +44,10 @@ function Resume() {
       <div className="pageHeader">Resume</div>
       <Container>
         <Row>
-          <Col md={3} sm={12} className="order-md-first order-sm-last">
+          <Col  xs={12} md={3} sm={12} className="order-md-first order-sm-last">
             <SkillsComponent skills={skillsList} />
           </Col>
-          <Col md={9} sm={12} className="order-md-last order-sm-first">
+          <Col  xs={12} md={9} sm={12} className="order-md-last order-sm-first">
             <div className="section">
             <ResumeHeader header="Work Experience" icon={faSuitcase} />
             <div className="sectionContent">

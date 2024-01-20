@@ -15,10 +15,12 @@
     height: 100vh;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .homepage .content{
-    width: 75%;
+    width: 60%;
+    min-width: 350px;
     font-size: 14px;
     text-align: center;
     .name{
@@ -34,6 +36,147 @@
     }
 }
 
+.homepage .photo{
+    padding: 10px 25px;
+    min-width: 300px !important;
+    .img-w {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Section 1 */
+    
+    .centerImage {
+        margin-left: auto;
+        width: 80%;
+    }   
+    .centerImage img {
+        border-radius: 50%;
+        box-shadow: 0 0 10px #D1D9E6;
+    }
+    
+    /* Section 1 End */
+    
+    /* Roundin sec */
+      .main {
+        position: relative;
+      }
+      .big-circle {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        border: 3px solid #bbbbbb;
+        border-radius: 50%;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        animation: Rotate 20s linear infinite;
+        -webkit-animation: Rotate 20s linear infinite;
+      }
+      .icon-block {
+        width: 64px;
+        height: 64px;
+        font-size: 40px;
+        position: absolute;
+        border-radius: 50%;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        background-color: #fff;
+        box-shadow: 0 0 10px #fff;
+      }
+      .icon-block a {
+        margin: 0px auto;
+        width: 60%;
+        animation: Rotate-reverse 20s linear infinite;
+        -webkit-animation: Rotate-reverse 20s linear infinite;
+    }
+    .icon-block:first-child {
+        top: 27%;
+        left: 9%;
+        transform: translate(-50%, -100%);
+        -webkit-transform: translate(-50%, -100%);
+      }
+      
+      .icon-block:nth-child(2) {
+        top: 35%;
+        right: -24%;
+        transform: translate(-100%, -50%);
+        -webkit-transform: translate(-100%, -50%);
+      }
+      
+      .icon-block:nth-child(3) {
+        bottom: 7%;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        -webkit-transform: translate(-50%, 100%);
+      }
+
+      
+    //   .icon-block:nth-child(4) {
+    //     top: 50%;
+    //     left: 0;
+    //     transform: translate(-50%, -50%);
+    //     -webkit-transform: translate(-50%, -50%);
+    //   }
+      .rounding-sec {
+        position: relative;
+        height: 400px;
+        width: 400px;
+      }
+      .centerImage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+      }
+      /* keyframe animation */
+      
+      @keyframes Rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      
+      @-webkit-keyframes Rotate {
+        from {
+          -webkit-transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      
+      @keyframes Rotate-reverse {
+        from {
+          transform: rotate(360deg);
+        }
+        to {
+          transform: rotate(0deg);
+        }
+      }
+      
+      @-webkit-keyframes Rotate-reverse {
+        from {
+          -webkit-transform: rotate(360deg);
+        }
+        to {
+          -webkit-transform: rotate(0deg);
+        }
+      }
+}
+
+ 
 .dark-mode{
     .blinking-cursor::after{
         background-color: #eeeeee;
@@ -49,6 +192,23 @@
     .homepage .content .name span{
         color: #0000fa;
     }     
+
+    .homepage .photo{
+        .centerImage img {
+            box-shadow: 0 0 10px #D1D9E6;
+        }
+          .big-circle {
+            border: 3px solid #9f9f9f;
+          }
+          .icon-block {
+            background-color: #eeeeee;
+            box-shadow: 0 0 10px #eeeeee;
+            a{
+                color: #505050;
+            }
+          }
+        }
+          
 } 
 
 .light-mode{
@@ -67,4 +227,20 @@
         color: #000080 ;
     }
 
+
+    .homepage .photo{
+        .centerImage img {
+            box-shadow: 0 0 10px #505050;
+        }
+          .big-circle {
+            border: 3px solid #9f9f9f;
+          }
+          .icon-block {
+            background-color: #505050;
+            box-shadow: 0 0 5px #323232;
+            a{
+                color: #eeeeee ;
+            }
+          }
+        }
 }

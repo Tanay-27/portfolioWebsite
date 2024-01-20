@@ -37,7 +37,7 @@ const PinnedRepos = ({ username }) => {
         }
         const toShowProjectsName = ['ML_Hackathons-Projects','HandWritten_OCR','Video_Chat_App','Machine_Vision_Projects','ChatApp','75_Days_Hard'];
         const data = await response.json();
-        setPinnedRepos(data.filter(repo => toShowProjectsName.includes(repo.name)));
+        setPinnedRepos(data) ; //.filter(repo => toShowProjectsName.includes(repo.name)));
       } catch (error) {
         console.error(error.message);
       }
