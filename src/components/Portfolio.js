@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Portfolio.scss';
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
