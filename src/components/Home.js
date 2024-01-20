@@ -4,7 +4,7 @@ import { useTypingEffect } from '../hooks/typing-effect'
 import self from '../images/homePageSelf.jpeg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faInstagram, faTelegram } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 function Home() {
     const text = useTypingEffect("I'm a Full Stack Developer passionate about ReactJS, Angular, NodeJS, and Python. Crafting clean, efficient software is my expertise. I thrive on exploring new and challenging terrains—both in code and the real world.");

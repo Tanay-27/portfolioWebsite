@@ -35,7 +35,7 @@ const PinnedRepos = ({ username }) => {
         if (!response.ok) {
           throw new Error(`Error fetching pinned repositories: ${response.statusText}`);
         }
-        const toShowProjectsName = ['ML_Hackathons-Projects','HandWritten_OCR','Video_Chat_App','Machine_Vision_Projects','ChatApp','75_Days_Hard'];
+        // const toShowProjectsName = ['ML_Hackathons-Projects','HandWritten_OCR','Video_Chat_App','Machine_Vision_Projects','ChatApp','75_Days_Hard'];
         const data = await response.json();
         setPinnedRepos(data) ; //.filter(repo => toShowProjectsName.includes(repo.name)));
       } catch (error) {
