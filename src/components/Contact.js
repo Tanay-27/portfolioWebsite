@@ -13,8 +13,8 @@ function Contact() {
             <div className="pageHeader">Contact</div>
             <Container fluid>
                 <Row>
-                    <Col><ContactMe /></Col>
-                    <Col><ContactInfo /></Col>
+                    <Col className='col-md-6 col-sm-9 col-xs-12'><ContactMe /></Col>
+                    <Col className='col-md-6 col-sm-9 col-xs-12 contactParent'><ContactInfo /></Col>
                 </Row>    
             </Container>
         </div>

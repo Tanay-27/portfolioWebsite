@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 350px;
     .inputField{
         padding: 5px 2px;
     }
@@ -113,9 +114,32 @@
     }
 
     // .contactContent :hover{
-    //     color: #0000fa;
-    //     border: #0000fa;
+    //     color: #0000ff;
+    //     border: #0000ff;
     // }
+}
+
+@media (max-width: 782px) {
+    .formContact{
+        border-right: none !important; 
+        form{
+            width: 90%;
+        }
+    }
+    .contactParent{
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        padding-top: 20px;
+    }
+
+    .dark-mode .contactInfo{
+        border-top: 1px solid #999999;
+    }
+
+    .light-mode .contactInfo{
+        border-top: 1px solid #434343;
+    }
 }
 
 .socialBtns{

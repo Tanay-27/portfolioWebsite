@@ -12,7 +12,7 @@
 .homepage{
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -39,7 +39,10 @@
 .homepage .photo{
     padding: 10px 25px;
     width: 40%;
-    min-width: 250px !important;
+    min-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .img-w {
         width: 100%;
         height: auto;
@@ -63,8 +66,8 @@
         position: relative;
       }
       .big-circle {
-        height: 100%;
-        width: 100%;
+        height: 400px;
+        width: 400px;
         position: relative;
         border: 3px solid #bbbbbb;
         border-radius: 50%;
@@ -128,8 +131,8 @@
     //   }
       .rounding-sec {
         position: relative;
-        height: 400px;
-        width: 400px;
+        height: 400px !important;
+        width: 400px !important;
       }
       .centerImage {
         position: absolute;
@@ -183,22 +186,38 @@
         width: 60vh !important;
     }
     .homepage .content{
-        width: 90% !important;
+        width: 80% !important;
     }
 
     .homepage .photo{
-        width: 90% !important;
+        width: 80% !important;
+        min-width: 300px;
+        .rounding-sec{
+          width: 250px !important;
+          height: 250px !important;
+        }
+
+        .big-circle{
+          width: 250px !important;
+          height: 250px !important;
+        }
+
+        .icon-block{
+          width: 40px;
+          height: 40px;
+          font-size: 28px;
+        }
     }
     
     .headerBtns {
       flex-direction: column;
       // flex-grow: initial; 
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       text-align: center;
     }
 
     .blankSpace{
-      height: 0px;
+      height: 10px;
     }
   
   }
@@ -216,7 +235,7 @@
     }
     
     .homepage .content .name span{
-        color: #0000fa;
+        color: #0000ff;
     }     
 
     .homepage .photo{

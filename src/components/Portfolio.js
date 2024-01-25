@@ -49,9 +49,9 @@ const PinnedRepos = ({ username }) => {
   }, [username]);
 
   return (
-    <div className='reposList'>
+    <div className='reposList row'>
         {pinnedRepos.map((repo) => (
-      <div className="repo">
+      <div className="repo col-md-5 col-sm-9 col-xs-11">
         <div className="name"><FontAwesomeIcon icon={faBook} />&nbsp;{repo.name}</div>
         <div className="description">{repo.description}</div>
         <div className="viewMore"><Link to={repo.url}>View More</Link></div>
