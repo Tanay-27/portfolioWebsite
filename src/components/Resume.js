@@ -1,41 +1,99 @@
 import React from 'react';
 import './Resume.scss';
 import { Container, Row, Col } from 'react-bootstrap';
-import { faSuitcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faSuitcase, faGraduationCap, faProjectDiagram, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const workExpData = [
   {
+    company:"Appknox",
+    designation:"Software Development Engineer (SDE-2)",
+    duration:"April 2024 - Present",
+    skills:"Python, Applied AI, Docker, Kubernetes, Qdrant, LangGraph",
+    details:"Working on mobile application security platforms, focusing on automation of pen-testing, vulnerability validation, and advanced security analysis workflows. Built large-scale fake app detection pipeline processing 3M+ mobile apps using metadata feature engineering, similarity scoring, and vector database search. Developing AI-based validation agents to reduce false positives in SAST/DAST scans and generate remediation guidance."
+  },
+  {
     company:"LTIMindtree",
     designation:"Senior Software Engineer",
-    duration:"July 2021 - Present",
-    skills:"Angular, NodeJS, MySQL, Python, Azure DevOps, Jenkins",
-    details:"Developing the frontend UI with Angular for code reusability, I implemented 15+ key functionalities, reducing development time by 40%. Translated client requirements into new features, conducted unit testing, and addressed security vulnerabilities, significantly enhancing functionality and security. Upgraded Angular, optimized performance for a 54% load time reduction, and addressed security. Mentored two interns, contributing to their skill development and project success"
+    duration:"July 2021 - April 2024",
+    skills:"MEAN Stack, Python, Azure DevOps, Jenkins",
+    details:"Delivered 15+ product features using reusable component design, improving development efficiency and maintainability. Optimized APIs and database queries through indexing, query refactoring, caching, reducing response times by ~50%. Integrated Microsoft Graph API, implemented unit testing, and resolved security issues to strengthen application stability. Mentored junior developers and interns."
   },
   {
     company:"LifeSpark Technologies",
     designation:"Embedded System and Machine Learning Intern",
-    duration:"Jan 2021 - April 2021",
+    duration:"Nov 2020 - June 2021",
     skills:"Python, EDA, Embedded C, Peripheral Interfacing",
-    details:"Contributed to an assistive solution for Parkinson's patients, designing an ML algorithm for IMU sensor data analysis. Built a neural network to predict freezing episodes, enhancing seizure prevention with audiovisual cues. Also, contributed to developing a laser pointer as a line source for visual simulation."
+    details:"Contributed to an ML-based assistive prototype for Parkinson's patients using IMU data and embedded system integration. Built a neural network to predict freezing episodes, enhancing seizure prevention with audiovisual cues."
   }
 ];
 
 const skillsList = [
-  {name: "Angular", rating:8},
-  {name: "NodeJS", rating:9},
-  {name: "ReactJS", rating:4},
   {name: "Python", rating:9},
-  {name: "MySQL", rating:9},
-  {name: "Machine Learning", rating:6},
-  {name: "Machine Vision", rating:7}
+  {name: "Django", rating:8},
+  {name: "NodeJS", rating:8},
+  {name: "TypeScript", rating:7},
+  {name: "Applied AI/ML", rating:8},
+  {name: "LangGraph", rating:7},
+  {name: "Vector Databases", rating:7},
+  {name: "Docker", rating:8},
+  {name: "Kubernetes", rating:7},
+  {name: "Application Security", rating:8},
+  {name: "Angular", rating:7},
+  {name: "React", rating:6},
+  {name: "REST APIs", rating:9},
+  {name: "CI/CD", rating:7}
 ];
 
 const educationData = [
   {id:1,institute:"Vidyalankar Instutute Of Technology",degree:"B.E.",perc:"9.42 CGPA",year:"2017-21"},
   {id:2,institute:"Army Public School",degree:"Class 12",perc:"93.6%",year:"2017"},
   {id:3,institute:"Army Public School",degree:"Class 10",perc:"10 CGPA",year:"2015"},
+];
+
+const projectsData = [
+  {
+    id: 1,
+    title: "AI-Assisted Mobile App Protection Analysis Tool",
+    duration: "Ongoing",
+    technologies: "Python, Frida, LLM Workflows, Containerized Sandbox",
+    description: "Built automated framework to analyze Android apps for advanced runtime protection mechanisms like RASP, anti-tampering, instrumentation detection for large-scale security assessments. Combined APK analysis, sandboxed run, and LLM-guided UI interaction to trigger and observe protection behavior."
+  },
+  {
+    id: 2,
+    title: "CodeHarbour",
+    duration: "Dec 2023",
+    technologies: "Python, React, Node.js, API Interfacing",
+    description: "Developed an interactive web-based code editor with API-based compilation and execution support. Added collaboration-oriented features for sharing solutions and improving developer workflow."
+  }
+];
+
+const achievementsData = [
+  {
+    id: 1,
+    title: "Project Synergy Award — Appknox",
+    year: "2025",
+    description: "Versatile contributions and strong collaboration across critical production initiatives."
+  },
+  {
+    id: 2,
+    title: "Airflow Fundamentals Certification",
+    year: "2024",
+    description: "Workflow orchestration and data pipeline concepts."
+  },
+  {
+    id: 3,
+    title: "Appreciation Award – Creativity & Innovation",
+    year: "2022",
+    description: "Recognized for technical contributions and problem-solving at work."
+  },
+  {
+    id: 4,
+    title: "HackerEarth Deep Learning Challenge",
+    year: "2021",
+    description: "Ranked within top 100 participants."
+  }
 ];
 
 function Resume() {
@@ -58,6 +116,20 @@ function Resume() {
             <ResumeHeader header="Education" icon={faGraduationCap} />
             <div className="sectionContent">
               {educationData.map( item => <Education key={item.id} {...item} />)}
+            </div>
+            </div>
+            
+            <div className="section">
+            <ResumeHeader header="Projects" icon={faProjectDiagram} />
+            <div className="sectionContent">
+              {projectsData.map( item => <Project key={item.id} {...item} />)}
+            </div>
+            </div>
+            
+            <div className="section">
+            <ResumeHeader header="Achievements & Certifications" icon={faTrophy} />
+            <div className="sectionContent">
+              {achievementsData.map( item => <Achievement key={item.id} {...item} />)}
             </div>
             </div>
             
@@ -132,6 +204,34 @@ function Skills({name,rating}) {
       </div>
     </div>
   );
+}
+
+function Project({title, duration, technologies, description}) {
+  return (
+    <div className='projectItem'>
+      <div className="headerLine">
+        <div className="projectTitle">{title}</div>
+        <div className="duration">{duration}</div>
+      </div>
+      <div className="technologies">
+        <span className="techLabel">Technologies:</span>
+        <span className="techList">{technologies}</span>
+      </div>
+      <div className="description">{description}</div>
+    </div>
+  )
+}
+
+function Achievement({title, year, description}) {
+  return (
+    <div className='achievementItem'>
+      <div className="headerLine">
+        <div className="achievementTitle">{title}</div>
+        <div className="year">{year}</div>
+      </div>
+      <div className="description">{description}</div>
+    </div>
+  )
 }
 
 export default Resume

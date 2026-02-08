@@ -33,7 +33,7 @@ const PinnedRepos = ({ username }) => {
         );
 
         if (!response.ok) {
-          setPinnedRepos(repoData)
+          setPinnedRepos(filteredRepoData)
         }
         else{
           const data = await response.json();
@@ -41,7 +41,7 @@ const PinnedRepos = ({ username }) => {
         }
         // const toShowProjectsName = ['ML_Hackathons-Projects','HandWritten_OCR','Video_Chat_App','Machine_Vision_Projects','ChatApp','75_Days_Hard'];
       } catch (error) {
-        setPinnedRepos(repoData);
+        setPinnedRepos(filteredRepoData);
       }
     };
 
@@ -50,11 +50,20 @@ const PinnedRepos = ({ username }) => {
 
   return (
     <div className='reposList row'>
-        {pinnedRepos.map((repo) => (
-      <div className="repo col-md-5 col-sm-9 col-xs-11">
-        <div className="name"><FontAwesomeIcon icon={faBook} />&nbsp;{repo.name}</div>
+        {pinnedRepos.map((repo, index) => (
+      <div key={index} className="repo col-md-5 col-sm-9 col-xs-11">
+        <div className="repo-header">
+          <div className="name"><FontAwesomeIcon icon={faBook} />&nbsp;{repo.name}</div>
+          {repo.status && <div className={`status status-${repo.status.toLowerCase()}`}>{repo.status}</div>}
+        </div>
         <div className="description">{repo.description}</div>
-        <div className="viewMore"><Link to={repo.url}>View More</Link></div>
+        {repo.technologies && (
+          <div className="technologies">
+            <span className="tech-label">Tech Stack:</span>
+            <span className="tech-list">{repo.technologies}</span>
+          </div>
+        )}
+        <div className="viewMore"><Link to={repo.url} target="_blank" rel="noopener noreferrer">View Project</Link></div>
       </div>
         ))}
     </div>
@@ -64,49 +73,88 @@ const PinnedRepos = ({ username }) => {
 
 const repoData = [
   {
-    "name": "portfolioWebsite",
-    "description": "Created Portfolio website using Reactjs, HTML and CSS",
-    "url": "https://api.github.com/repos/Tanay-27/portfolioWebsite",
+    "name": "AI Mobile Security Analyzer",
+    "description": "Automated framework to analyze Android apps for advanced runtime protection mechanisms like RASP, anti-tampering, instrumentation detection. Uses Python, Frida, LLM Workflows, and Containerized Sandbox for large-scale security assessments.",
+    "url": "https://github.com/Tanay-27",
+    "status": "Ongoing",
+    "technologies": "Python, Frida, LLM Workflows, Docker",
+    "lastUpdated": "2024-12-01"
   },
   {
-    "name": "Video_Chat_App",
-    "description": "A group video calling application that allows all users with the link to video call in real time. Uses WebRTC and socket communication",
-    "url": "https://api.github.com/repos/Tanay-27/Video_Chat_App",
+    "name": "CodeHarbour",
+    "description": "Interactive web-based code editor with API-based compilation and execution support. Features collaboration-oriented tools for sharing solutions and improving developer workflow.",
+    "url": "https://github.com/Tanay-27",
+    "status": "Completed",
+    "technologies": "Python, React, Node.js, API Integration",
+    "lastUpdated": "2023-12-01"
   },
   {
-    "name": "Machine_Vision_Projects",
-    "description": "Machine Vision projects including but not limited to Face Recognition, Gaze Detection, Handwriting Recognition, Smile Detection, Drowsiness Detection, etc",
-    "url": "https://api.github.com/repos/Tanay-27/Machine_Vision_Projects",
+    "name": "Portfolio Website",
+    "description": "Modern portfolio website built with React, featuring responsive design, dark/light theme toggle, and comprehensive resume showcase.",
+    "url": "https://github.com/Tanay-27/portfolioWebsite",
+    "status": "Active",
+    "technologies": "React, SCSS, Bootstrap",
+    "lastUpdated": "2026-02-08"
   },
   {
-    "name": "HandWritten_OCR",
-    "description": "Handwritten Character Recognition using NIST dataset",
-    "url": "https://api.github.com/repos/Tanay-27/HandWritten_OCR",
+    "name": "Video Chat App",
+    "description": "Group video calling application enabling real-time communication for multiple users. Implements WebRTC and socket communication for seamless video conferencing.",
+    "url": "https://github.com/Tanay-27/Video_Chat_App",
+    "status": "Completed",
+    "technologies": "WebRTC, Socket.io, JavaScript",
+    "lastUpdated": "2022-08-15"
   },
   {
-    "name": "ChatApp",
-    "description": "Node.js and MongoDB real-time chat application",
-    "url": "https://api.github.com/repos/Tanay-27/ChatApp",
+    "name": "Computer Vision Suite",
+    "description": "Comprehensive collection of computer vision projects including Face Recognition, Gaze Detection, Handwriting Recognition, Smile Detection, and Drowsiness Detection systems.",
+    "url": "https://github.com/Tanay-27/Machine_Vision_Projects",
+    "status": "Completed",
+    "technologies": "Python, OpenCV, TensorFlow, ML",
+    "lastUpdated": "2021-11-20"
   },
   {
-    "name": "75_Days_Hard",
-    "description": "Documenting my journey of taking up 75 days non-stop incremental practise/learning of concepts",
-    "url": "https://api.github.com/repos/Tanay-27/75_Days_Hard",
+    "name": "Handwriting OCR System",
+    "description": "Advanced handwritten character recognition system using NIST dataset with high accuracy OCR capabilities for document digitization.",
+    "url": "https://github.com/Tanay-27/HandWritten_OCR",
+    "status": "Completed",
+    "technologies": "Python, TensorFlow, OCR, NIST Dataset",
+    "lastUpdated": "2021-09-10"
   },
   {
-    "name": "ML_Hackathons-Projects",
-    "description": "A collection of ML models created for different Hackathons and projects. Jupyter notebooks ready to use in Jupyter or VSCode",
-    "url": "https://api.github.com/repos/Tanay-27/ML_Hackathons-Projects",
+    "name": "Real-Time Chat App",
+    "description": "Real-time chat application with modern UI, user authentication, and persistent message storage using Node.js and MongoDB.",
+    "url": "https://github.com/Tanay-27/ChatApp",
+    "status": "Completed",
+    "technologies": "Node.js, MongoDB, Socket.io",
+    "lastUpdated": "2022-03-25"
   },
   {
-    "name": "paymentapi",
-    "description": "Integration of Instamojo Payment API Sandbox into Python Code",
-    "url": "https://api.github.com/repos/Tanay-27/paymentapi",
-  },
-  {
-    "name": "send-emails",
-    "description": "Python Script to send Emails to multiple recipients",
-    "url": "https://api.github.com/repos/Tanay-27/send-emails",
-  },
-]
+    "name": "ML Competition Solutions",
+    "description": "Collection of machine learning models and solutions developed for various hackathons and competitions. Includes Jupyter notebooks ready for deployment.",
+    "url": "https://github.com/Tanay-27/ML_Hackathons-Projects",
+    "status": "Archive",
+    "technologies": "Python, Jupyter, Scikit-learn, Pandas",
+    "lastUpdated": "2021-12-15"
+  }
+];
+
+// Filter projects to show only those active in the past year
+const getRecentProjects = (projects) => {
+  const oneYearAgo = new Date();
+  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+  
+  return projects.filter(project => {
+    const lastUpdated = new Date(project.lastUpdated);
+    return lastUpdated >= oneYearAgo || project.status === 'Ongoing' || project.status === 'Active';
+  }).sort((a, b) => {
+    // Sort by status priority (Ongoing > Active > Completed) then by date
+    const statusPriority = { 'Ongoing': 3, 'Active': 2, 'Completed': 1, 'Archive': 0 };
+    if (statusPriority[a.status] !== statusPriority[b.status]) {
+      return statusPriority[b.status] - statusPriority[a.status];
+    }
+    return new Date(b.lastUpdated) - new Date(a.lastUpdated);
+  });
+};
+
+const filteredRepoData = getRecentProjects(repoData)
 

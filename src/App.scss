@@ -1,42 +1,88 @@
-.dark-mode,.light-mode{
-    transition: color 0.75s ease-in-out, background-color 0.75s ease-in-out;
+:root {
+  /* Light theme variables */
+  --primary-color-light: #000080;
+  --secondary-color-light: #0066cc;
+  --accent-color-light: #ff6b35;
+  --background-light: #ffffff;
+  --surface-light: #f8f9fa;
+  --text-primary-light: #222222;
+  --text-secondary-light: #434343;
+  --border-light: #e0e0e0;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --card-background-light: #ffffff;
+  
+  /* Dark theme variables */
+  --primary-color-dark: #4a9eff;
+  --secondary-color-dark: #66b3ff;
+  --accent-color-dark: #ff8a65;
+  --background-dark: #0d1117;
+  --surface-dark: #161b22;
+  --text-primary-dark: #f0f6fc;
+  --text-secondary-dark: #8b949e;
+  --border-dark: #30363d;
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+  --card-background-dark: #21262d;
 }
-// .light-mode{
-//   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
-// }
-#mainElement{
+
+.light-mode {
+  --primary-color: var(--primary-color-light);
+  --secondary-color: var(--secondary-color-light);
+  --accent-color: var(--accent-color-light);
+  --background: var(--background-light);
+  --surface: var(--surface-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --border: var(--border-light);
+  --shadow: var(--shadow-light);
+  --card-background: var(--card-background-light);
+  
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.dark-mode {
+  --primary-color: var(--primary-color-dark);
+  --secondary-color: var(--secondary-color-dark);
+  --accent-color: var(--accent-color-dark);
+  --background: var(--background-dark);
+  --surface: var(--surface-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --border: var(--border-dark);
+  --shadow: var(--shadow-dark);
+  --card-background: var(--card-background-dark);
+  
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.dark-mode, .light-mode {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mainElement {
   max-height: 100%;
   min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text-primary);
 }
 .mouse-dot {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    pointer-events: none; /* Ensure the dot doesn't interfere with mouse events */
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    transition: transform 0.4s ease-in; /* Add a smooth transition effect */
-  }
-  
-  .dark-mode{
-    .mouse-dot{
-      background-color: #0000ff;
-    }   
-
-    .pageHeader{
-      color: #eeeeee;
-    }
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: var(--primary-color);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px var(--primary-color);
+  opacity: 0.8;
 }
-  
-  .light-mode{
-    background-color: #eeeeee;
-    .mouse-dot{
-      background-color: #000080;
-    }
-    .pageHeader{
-      color: #505050;
-    }
+
+.mouse-dot:hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 1;
 }
 
 @media (max-width: 578px){
@@ -51,10 +97,25 @@
   flex-direction: column;
   justify-content: center;
 }
-  .pageHeader{
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 10px 0px;
+  .pageHeader {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  padding: 2rem 0;
+  color: var(--text-primary);
+  position: relative;
+  margin-bottom: 2rem;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
   }
+}

@@ -12,10 +12,11 @@
 .homepage{
     display: flex;
     width: 100%;
-    height: 100%;
+    min-height: calc(100vh - 80px);
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 2rem 0;
 }
 
 .homepage .content{
@@ -102,10 +103,10 @@
         -webkit-animation: Rotate-reverse 20s linear infinite;
     }
     .icon-block:first-child {
-        top: 27%;
+        top: 15%;
         left: 9%;
-        transform: translate(-50%, -100%);
-        -webkit-transform: translate(-50%, -100%);
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
       }
       
       .icon-block:nth-child(2) {
@@ -224,32 +225,33 @@
  
 .dark-mode{
     .blinking-cursor::after{
-        background-color: #eeeeee;
+        background-color: var(--text-primary);
     }
     .homepage .content{
-        color: #eeeeee;
+        color: var(--text-primary);
 
         .line{
-            color: #c0c0c0;
+            color: var(--text-secondary);
         }
     }
     
     .homepage .content .name span{
-        color: #0000ff;
+        color: var(--primary-color);
     }     
 
     .homepage .photo{
         .centerImage img {
-            box-shadow: 0 0 10px #D1D9E6;
+            box-shadow: 0 0 15px var(--primary-color);
         }
           .big-circle {
-            border: 3px solid #9f9f9f;
+            border: 3px solid var(--border);
           }
           .icon-block {
-            background-color: #eeeeee;
-            box-shadow: 0 0 10px #eeeeee;
+            background-color: var(--card-background);
+            box-shadow: 0 0 10px var(--primary-color);
+            border: 1px solid var(--border);
             a{
-                color: #505050;
+                color: var(--primary-color);
             }
           }
         }
@@ -258,33 +260,34 @@
 
 .light-mode{
     .blinking-cursor::after{
-        background-color: #505050;
+        background-color: var(--text-primary);
     }
     .homepage .content{
-        color: #505050;
+        color: var(--text-primary);
 
         .line{
-            color: #626262;
+            color: var(--text-secondary);
         }
     }
 
     .homepage .content .name span{
-        color: #000080 ;
+        color: var(--primary-color);
     }
 
 
     .homepage .photo{
         .centerImage img {
-            box-shadow: 0 0 10px #505050;
+            box-shadow: 0 0 15px var(--primary-color);
         }
           .big-circle {
-            border: 3px solid #9f9f9f;
+            border: 3px solid var(--border);
           }
           .icon-block {
-            background-color: #505050;
-            box-shadow: 0 0 5px #323232;
+            background-color: var(--card-background);
+            box-shadow: 0 0 10px var(--shadow);
+            border: 1px solid var(--border);
             a{
-                color: #eeeeee ;
+                color: var(--primary-color);
             }
           }
         }

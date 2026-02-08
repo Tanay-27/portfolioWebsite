@@ -69,6 +69,77 @@
 .eduItem:not(:last-child){
        margin-bottom: 10px;
    }
+
+.projectItem{
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+
+    .projectTitle{
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .technologies{
+        font-weight: 500;
+        font-size: 16px;
+        padding-bottom: 5px;
+        margin-top: 5px;
+
+        .techLabel{
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .techList{
+            color: var(--text-secondary);
+        }
+    }
+
+    .description{
+        text-align: justify;
+        margin-top: 8px;
+        line-height: 1.5;
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        transform: translate(-16px,8px);
+        border-radius: 50%;
+    }
+}
+
+.achievementItem{
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+
+    .achievementTitle{
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .year{
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .description{
+        text-align: justify;
+        margin-top: 5px;
+        line-height: 1.5;
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        transform: translate(-16px,8px);
+        border-radius: 50%;
+    }
+}
 .p1{
   padding: 7px 0px;
 
@@ -137,14 +208,14 @@
       color: #222222;
     }
 
-    .workExpItem .details, .eduItem .p2, .nameNPerc .perc{
+    .workExpItem .details, .eduItem .p2, .nameNPerc .perc, .projectItem .description, .achievementItem .description, .projectItem .technologies{
       color: #434343;
     }
 
-    .workExpItem .headerLine, .eduItem .institute{
+    .workExpItem .headerLine, .eduItem .institute, .projectItem .projectTitle, .achievementItem .achievementTitle{
       color: #000080;
     }
-    .headerLine::before, .eduItem::before{
+    .headerLine::before, .eduItem::before, .projectItem::before, .achievementItem::before{
       background-color: #9f9f9f;
       border: 1px solid #9f9f9f;
     }
@@ -167,14 +238,14 @@
       color: #cccccc;
     }
 
-    .workExpItem .details , .eduItem .p2, .nameNPerc .perc{
+    .workExpItem .details , .eduItem .p2, .nameNPerc .perc, .projectItem .description, .achievementItem .description, .projectItem .technologies{
       color: #999999;
     }
 
-    .workExpItem .headerLine, .eduItem .institute{
+    .workExpItem .headerLine, .eduItem .institute, .projectItem .projectTitle, .achievementItem .achievementTitle{
       color: #0000ff;
     }
-    .headerLine::before, .eduItem::before{
+    .headerLine::before, .eduItem::before, .projectItem::before, .achievementItem::before{
       background-color: #323232;
       border: 1px solid #323232;
   }
