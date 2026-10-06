@@ -1,209 +1,162 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: sans-serif;
-    margin: 20px;
-    padding: 0;
-  }
-  
-  code {
-    font-size: 1.2em;
-  }
-  
-  body {
-    font-family: sans-serif;
-    margin: 20px;
-    padding: 0;
+// ---- Games index ----
+.gamesComponent {
+  .gamesCardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
   }
 
-  .game{
+  .gameCard {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px;
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.15s ease;
+    &:hover { border-color: var(--primary-color); }
+
+    .img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #ffffff;
+      border-radius: 8px;
+      img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    }
+    .name { font-weight: 600; }
+    .goToGame { font-size: 14px; }
   }
-  
-  // .game-board{
-  //   width: 50%;
-  //   height: 50%;
-  // }
-  .square {
-    float: left;
-    font-size: 60px;
-    font-weight: bold;
-    line-height: 100px;
-    height: 100px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 100px;
-  }
-  
-  .board-row:after {
-    clear: both;
-    content: '';
-    display: table;
-  }
-  
+}
+
+.dark-mode .gamesComponent .gameCard .img {
+  filter: invert(0.9);
+}
+
+// ---- Tic Tac Toe ----
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 48px 24px;
+
   .status {
-    margin-bottom: 50px;
-    width: 100%;
-    font-size: 40px;
-
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
   }
-  
-  .game .button{
+
+  .button {
     cursor: pointer;
-    font-size: 40px;
-    position: relative;
-    transform: translate(-30px,-170px);
+    font-size: 24px;
+    color: var(--text-secondary);
+    &:hover { color: var(--text-primary); }
   }
-  .game-info {
-    margin-left: 50px;
+}
+
+.square {
+  float: left;
+  width: 96px;
+  height: 96px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 96px;
+  text-align: center;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+// ---- Hangman ----
+.hangman {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 48px 10px;
+  color: var(--text-primary);
+
+  .hm-message {
+    font-size: 24px;
+    font-weight: 600;
+    min-height: 32px;
+    text-align: center;
   }
-  
 
+  .hm-gallows {
+    width: 220px;
+    max-width: 60vw;
+    height: auto;
+  }
 
-
-.gamesComponent{
-
-  .gamesCardContainer{
+  .hm-word {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px 20px;
-    &> *{
-      padding: 5px; 
-      margin: 5px 15px;
-      border-radius: 5px;
-    }
-    .gameCard{
-      height: 350px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-bottom: 5px;
-      margin-bottom: 10px;
+    justify-content: center;
+    gap: 8px;
 
-      .img{
-        height: 250px;
-        text-align: center;
-        background-color: #ffffff;
-        border-radius: 5px;
-        // aspect-ratio: 3/2;
-        object-fit: contain;
+    .hm-letter {
+      width: 34px;
+      height: 44px;
+      line-height: 44px;
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 3px solid currentColor;
 
-        img{
-          width: 98%;
-          height: auto;
-          max-height: 100%;
-        }
-      }
-
-      .name{
-        font-weight: 700;
-        letter-spacing: 3px;
-        font-size: 18px;
-        text-align: center;
-      }
-
-      .goToGame{
-        text-align: end;
-        font-size: 16px;
-        padding-right: 5px;
-        cursor: pointer;
-      }
-
-      .disabled{
-        pointer-events: none;
-        cursor: not-allowed;
-        opacity: 0.5;
-        color: #999 !important;
-      }
+      &.missed { color: var(--accent-color); }
     }
   }
-}
 
-.light-mode{
+  .hm-keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    max-width: 420px;
 
-  .status{
-    color: #323232;
+    .hm-key {
+      width: 38px;
+      height: 38px;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: inherit;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+
+      &:hover:not(:disabled) { border-color: currentColor; }
+      &.hit { border-color: var(--secondary-color); color: var(--secondary-color); }
+      &.miss { opacity: 0.4; text-decoration: line-through; }
+      &:disabled { cursor: not-allowed; }
+    }
   }
-  .square{
+
+  .hm-reset {
+    cursor: pointer;
+    font-size: 15px;
+    padding: 6px 14px;
+    color: inherit;
     background: transparent;
-    border: 1px solid #434343;
-    color: #323232;
-  }
-
-  .game .button{
-    color: #323232;
-  }
-  .gamesComponent{
-    .gamesCardContainer{
-      .gameCard{
-        border: 1px solid #434343;
-  
-        .img{
-          border: 1px solid #434343;
-          mix-blend-mode: color-burn;
-        }
-  
-        .name{
-          color: #222222;
-        }
-  
-        .goToGame{
-          color: #222222;
-        }
-        a{
-          text-decoration: none;
-          color: #434343;
-        }
-      }
-    }
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    &:hover { border-color: var(--primary-color); }
   }
 }
-
-.dark-mode{
-
-  .status{
-    color: #9f9f9f;
-  }
-  .square{
-    background: transparent;
-    border: 1px solid #999999;
-    color: #9f9f9f;
-  }
-
-  .game .button{
-    color: #9f9f9f;
-  }
-  .gamesComponent{
-    .gamesCardContainer{
-      .gameCard{
-        border: 1px solid #cccccc;
-  
-        .img{
-          border: 1px solid #323232;
-          filter: invert(0.9) !important;
-          mix-blend-mode: lighten;
-        }
-  
-        .name{
-          color: #cccccc;
-        }
-  
-        .goToGame{
-          color: #cccccc;
-        }
-        a{
-          text-decoration: none;
-          color: #cccccc;
-        }
-      }
-    }
-  }
-}
-

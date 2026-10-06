@@ -1,266 +1,53 @@
+.resume {
+  .role {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
 
-.sectionContent{
-    margin-left: 10px;
-    padding-left: 10px;
-}
-.workExpItem{
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-}
+    &:last-child { border-bottom: 0; }
 
-.resume{
-    padding: 5px 10px;
-}
-.container{
-    max-width: 100% !important;
-}
-.sectionHeader{
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.headerLine{
-    display: flex;
-    justify-content: space-between;
-    font-weight: 600;
-    font-size: 20px;
-    padding-bottom: 3px;
-
-    &::before{
-        content: "";
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        transform: translate(-17px,8px);
-        border-radius: 50%;
+    .period {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-secondary);
     }
-}
-
-.designationSkills{
-    font-weight: 500;
-    font-size: 18px;
-    padding-bottom: 3px;
-}
-
-.details{
-    text-align: justify;
-}
-
-.eduItem{
-    display: flex;
-    justify-content: space-between;
-    font-weight: 500;
-
-    &::before{
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        transform: translate(-16px,8px);
-        border-radius: 50%;
+    .company {
+      font-weight: 600;
+      margin-top: 4px;
     }
+    h3 { font-size: 1rem; font-weight: 500; color: var(--text-secondary); margin: 0 0 12px; }
 
-    .p1 > *:not(:last-child)::after {
-        content: ' | ';
-      }
-
-      
-    }
-.eduItem:not(:last-child){
-       margin-bottom: 10px;
-   }
-
-.projectItem{
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-
-    .projectTitle{
-        font-weight: 600;
-        font-size: 18px;
-    }
-
-    .technologies{
-        font-weight: 500;
-        font-size: 16px;
-        padding-bottom: 5px;
-        margin-top: 5px;
-
-        .techLabel{
-            font-weight: 600;
-            margin-right: 8px;
-        }
-
-        .techList{
-            color: var(--text-secondary);
-        }
-    }
-
-    .description{
-        text-align: justify;
-        margin-top: 8px;
-        line-height: 1.5;
-    }
-
-    &::before{
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        transform: translate(-16px,8px);
-        border-radius: 50%;
-    }
-}
-
-.achievementItem{
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-
-    .achievementTitle{
-        font-weight: 600;
-        font-size: 18px;
-    }
-
-    .year{
-        font-weight: 500;
-        font-size: 16px;
-    }
-
-    .description{
-        text-align: justify;
-        margin-top: 5px;
-        line-height: 1.5;
-    }
-
-    &::before{
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        transform: translate(-16px,8px);
-        border-radius: 50%;
-    }
-}
-.p1{
-  padding: 7px 0px;
-
-  .institute{
-    font-weight: 600;
-  }
-}
-.skillsComponent{
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.skill-bar {
-    margin-bottom: 20px;
-  }
-
-  .nameNPerc{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 1px;
-    align-items: flex-end;
-
-    .name{
-        font-weight: 500;
-        font-size: 20px;
-    }
-    .perc{
-        font-size: 12px;
+    ul {
+      margin: 0 0 16px;
+      padding-left: 18px;
+      li { margin-bottom: 8px; font-size: 14.5px; }
+      li::marker { color: var(--primary-color); }
     }
   }
 
-  .progress-bar {
-    border-radius: 2px;
-    height: 9px;
-    position: relative;
-  }
-  
-  .background {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-  }
-  
-  .filler {
-    height: 100%;
-    transition: width 1s ease-in-out;
-    z-index: 1;
-    border-radius: 2px;
-  }
-  
-  /* Animation to set initial width */
-  .filler-initial {
-    animation: setInitialWidth 1s ease-in-out;
-  }
-  
-  @keyframes setInitialWidth {
-    from {
-      width: 0;
-    }
+  .skill-groups {
+    display: grid;
+    gap: 18px;
+    .group-name { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
   }
 
-  .light-mode{
-    .sectionHeader, .designationSkills, .eduItem .perc, .eduItem .degree, .nameNPerc .name{
-      color: #222222;
-    }
-
-    .workExpItem .details, .eduItem .p2, .nameNPerc .perc, .projectItem .description, .achievementItem .description, .projectItem .technologies{
-      color: #434343;
-    }
-
-    .workExpItem .headerLine, .eduItem .institute, .projectItem .projectTitle, .achievementItem .achievementTitle{
-      color: #000080;
-    }
-    .headerLine::before, .eduItem::before, .projectItem::before, .achievementItem::before{
-      background-color: #9f9f9f;
-      border: 1px solid #9f9f9f;
-    }
-    .sectionContent{
-     border-left: 3px solid #9f9f9f;
-    }
-
-    .skill-bar{
-      .background{
-        background-color: #cccccc;
-      }
-      .filler{
-        background-color: #000080;
-      }
-    }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
   }
 
-  .dark-mode{
-    .sectionHeader, .designationSkills , .eduItem .perc, .eduItem .degree, .nameNPerc .name{
-      color: #cccccc;
-    }
-
-    .workExpItem .details , .eduItem .p2, .nameNPerc .perc, .projectItem .description, .achievementItem .description, .projectItem .technologies{
-      color: #999999;
-    }
-
-    .workExpItem .headerLine, .eduItem .institute, .projectItem .projectTitle, .achievementItem .achievementTitle{
-      color: #0000ff;
-    }
-    .headerLine::before, .eduItem::before, .projectItem::before, .achievementItem::before{
-      background-color: #323232;
-      border: 1px solid #323232;
+  .entry {
+    margin-bottom: 18px;
+    .entry-title { font-weight: 600; font-size: 14.5px; }
+    .entry-sub { font-size: 13.5px; color: var(--text-secondary); }
+    .entry-date { font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); font-weight: 400; }
   }
+}
 
-  .sectionContent{
-    border-left: 3px solid #323232;
-   }
-
-   .skill-bar{
-    .background{
-      background-color: #323232;
-    }
-    .filler{
-      background-color: #0000ff;
-    }
-  }
-  }
-  
+@media (max-width: 760px) {
+  .resume .role { grid-template-columns: 1fr; gap: 8px; }
+  .resume .two-col { grid-template-columns: 1fr; gap: 0; }
+}

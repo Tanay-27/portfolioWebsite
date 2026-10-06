@@ -1,49 +1,49 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Home.scss'
-import { useTypingEffect } from '../hooks/typing-effect'
+import { profile } from '../data/profile';
 import self from '../images/homePageSelf.jpeg';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function Home() {
-    const text = useTypingEffect("I'm a Software Engineer with 5+ years of experience in Python backends, applied AI, and application security. I take LLM agents out of the demo and into customers' real pipelines: validating vulnerabilities, shipping fixes into IDEs and CI/CD. I thrive on exploring new and challenging terrains—both in code and the real world.");
+  const { name, role, headline, intro, links, now, stats } = profile;
   return (
-    <div className="homepage">
-      <div className="photo">
-      <div class="rounding-sec">
-                <div class="big-circle">
-                    <div class="icon-block">
-                    <a href="https://github.com/Tanay-27" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faGithub}/>
-                    </a>
-                    </div>
-                    <div class="icon-block">
-                    <a href="https://www.linkedin.com/in/tanayshah27" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faLinkedin}/>
-                    </a>
-                    </div>
-                    <div class="icon-block">
-                    <a href="https://www.instagram.com/tanay.27" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faInstagram}/>
-                    </a>
-                    </div>
-                    
-                </div>
-                <div class="centerImage">
-                    <img src={self} alt="" class="img-w" />
-                </div>
-            </div>
-      </div>
-        <div className="content">
-            <div className="name">Hi! I am <span>Tanay Shah</span></div>
-            <div className="line blinking-cursor">
-                {text}
-            </div>
+    <div className="page home">
+      <section className="hero">
+        <div className="hero-text">
+          <div className="eyebrow">{role}</div>
+          <h1>{headline}</h1>
+          <p className="lead">{intro}</p>
+          <div className="cta-row">
+            <Link className="cta primary" to="/resume">View resume</Link>
+            <Link className="cta" to="/portfolio">See projects</Link>
+            <a className="icon-link" href={links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+            <a className="icon-link" href={links.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+          </div>
         </div>
+        <img className="portrait" src={self} alt={name} />
+      </section>
+
+      <section className="now panel">
+        <div className="eyebrow">Currently · {now.where}</div>
+        <p>{now.text}</p>
+      </section>
+
+      <section className="stats">
+        {stats.map((s) => (
+          <div className="stat" key={s.label}>
+            <div className="value">{s.value}</div>
+            <div className="label">{s.label}</div>
+          </div>
+        ))}
+      </section>
     </div>
   )
 }
-
 
 export default Home

@@ -1,145 +1,52 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 import './About.scss'
+import { profile, principles } from '../data/profile';
 
 function About() {
   return (
-    <div className='about'>
-      <div className="pageHeader">About Me</div>
-      <Container>
-        <Row>
-          <Col md={12}>
-            <div className="about-content">
-              <div className="professional-summary">
-                <h3>Professional Summary</h3>
-                <p>
-                  Backend engineer with 5+ years of experience across full-stack and Python backend development, 
-                  now focused on applied AI and application security. I build the right context for LLM reasoning and 
-                  wrap it in agentic harnesses (LangGraph), sandboxes, and automated verification, turning noisy 
-                  security signals into validated findings and fixes that enterprise teams can act on.
-                </p>
-                <p>
-                  My work spans AI-driven vulnerability validation, automated remediation, MCP-based IDE integration, an 
-                  AI-assisted pentesting framework, and a mobile threat intelligence pipeline covering 3M+ apps. I'm 
-                  comfortable owning delivery end to end, from API design and async workers to vector search, 
-                  containerization, and deployment, backed by prior MEAN stack experience.
-                </p>
-              </div>
-              
-              <div className="expertise-areas">
-                <h3>Areas of Expertise</h3>
-                <div className="expertise-grid">
-                  <div className="expertise-item">
-                    <h4>Backend Development</h4>
-                    <p>Python, Django, Node.js, TypeScript, PostgreSQL, Redis, Celery, REST APIs</p>
-                  </div>
-                  <div className="expertise-item">
-                    <h4>Applied AI & ML</h4>
-                    <p>Agentic Harnesses, LangGraph, RAG Pipelines, Vector Search (Qdrant), Feature Engineering, Gemini API</p>
-                  </div>
-                  <div className="expertise-item">
-                    <h4>Application Security</h4>
-                    <p>SAST/DAST Tooling, Mobile App Security, Pentesting Automation, Vulnerability Analysis</p>
-                  </div>
-                  <div className="expertise-item">
-                    <h4>Infrastructure & DevOps</h4>
-                    <p>Docker, Kubernetes, CI/CD Integrations, Azure DevOps, Jenkins</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="skills-section">
-                <h3>Technical Skills</h3>
-                <div className="skills-categories">
-                  <div className="skill-category">
-                    <h4>Backend & Languages</h4>
-                    <div className="skills-grid">
-                      <SkillBar name="Python" level={9} />
-                      <SkillBar name="Django" level={8} />
-                      <SkillBar name="Node.js" level={8} />
-                      <SkillBar name="TypeScript" level={7} />
-                      <SkillBar name="REST APIs" level={9} />
-                    </div>
-                  </div>
-                  
-                  <div className="skill-category">
-                    <h4>Applied AI & ML</h4>
-                    <div className="skills-grid">
-                      <SkillBar name="LLM Development" level={8} />
-                      <SkillBar name="LangGraph" level={7} />
-                      <SkillBar name="Agent Harnesses" level={8} />
-                      <SkillBar name="RAG Pipelines" level={7} />
-                      <SkillBar name="Vector Databases" level={7} />
-                      <SkillBar name="Feature Engineering" level={8} />
-                      <SkillBar name="Gemini API" level={7} />
-                    </div>
-                  </div>
-                  
-                  <div className="skill-category">
-                    <h4>Infrastructure & DevOps</h4>
-                    <div className="skills-grid">
-                      <SkillBar name="Docker" level={8} />
-                      <SkillBar name="Kubernetes" level={7} />
-                      <SkillBar name="CI/CD" level={7} />
-                      <SkillBar name="Azure DevOps" level={7} />
-                      <SkillBar name="Jenkins" level={6} />
-                    </div>
-                  </div>
-                  
-                  <div className="skill-category">
-                    <h4>Application Security</h4>
-                    <div className="skills-grid">
-                      <SkillBar name="SAST/DAST" level={8} />
-                      <SkillBar name="Mobile App Security" level={8} />
-                      <SkillBar name="Pentesting Automation" level={7} />
-                      <SkillBar name="Vulnerability Analysis" level={8} />
-                    </div>
-                  </div>
-                  
-                  <div className="skill-category">
-                    <h4>Frontend (Prior Experience)</h4>
-                    <div className="skills-grid">
-                      <SkillBar name="Angular" level={7} />
-                      <SkillBar name="React" level={6} />
-                      <SkillBar name="JavaScript" level={7} />
-                      <SkillBar name="SCSS/CSS" level={7} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="personal-info">
-                <h3>Beyond Code</h3>
-                <p>
-                  I thrive on exploring new and challenging terrains—both in code and the real world. 
-                  When I'm not building secure, scalable systems, you'll find me exploring new technologies, 
-                  contributing to open-source projects, or planning my next adventure.
-                </p>
-              </div>
+    <div className="page about">
+      <div className="pageHeader">About</div>
+
+      <section className="summary">
+        <p>
+          I'm a backend engineer with 5+ years of experience across full-stack and Python backend
+          development, now focused on applied AI and application security. I build the right context
+          for LLM reasoning and wrap it in agentic harnesses (LangGraph), sandboxes and automated
+          verification, turning noisy security signals into validated findings and fixes that
+          enterprise teams can act on.
+        </p>
+        <p>
+          My work spans AI-driven vulnerability validation, automated remediation, MCP-based IDE
+          integration, an AI-assisted pentesting framework, and a mobile threat intelligence
+          pipeline covering 3M+ apps. I'm comfortable owning delivery end to end, from API design
+          and async workers to vector search, containerization and deployment, backed by earlier
+          MEAN stack experience.
+        </p>
+      </section>
+
+      <section>
+        <div className="section-label">How I work</div>
+        <div className="principles">
+          {principles.map((p) => (
+            <div className="panel" key={p.title}>
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
             </div>
-          </Col>
-        </Row>
-      </Container>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="section-label">Beyond work</div>
+        <p className="summary-p">
+          I like exploring new terrain, in code and in the real world. I learn by building side
+          projects: a Rust API client, an agent memory system, a trading backtester.{' '}
+          <Link to="/portfolio">See what I've built</Link> or <a href={`mailto:${profile.links.email}`}>say hi</a>.
+        </p>
+      </section>
     </div>
   )
-}
-
-function SkillBar({ name, level }) {
-  return (
-    <div className="skill-bar">
-      <div className="skill-info">
-        <span className="skill-name">{name}</span>
-        <span className="skill-level">{level}/10</span>
-      </div>
-      <div className="skill-progress">
-        <div className="skill-progress-bg"></div>
-        <div 
-          className="skill-progress-fill" 
-          style={{ width: `${level * 10}%` }}
-        ></div>
-      </div>
-    </div>
-  );
 }
 
 export default About
