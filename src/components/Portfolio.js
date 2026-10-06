@@ -1,52 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Portfolio.scss';
 import { Link } from "react-router-dom";
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const githubUsername='Tanay-27';
 function Portfolio() {
   return (
     <div className='portfolio'>
       <div className="pageHeader">Portfolio</div>
-      <PinnedRepos username={githubUsername} />
+      <PinnedRepos />
     </div>
   )
 }
 
 export default Portfolio
 
-const PinnedRepos = ({ username }) => {
-  const [pinnedRepos, setPinnedRepos] = useState([]);
-
-  useEffect(() => {
-    const fetchPinnedRepos = async () => {
-      try {
-        const response = await fetch(
-          `https://api.github.com/users/${username}/repos?sort=updated`,
-          {
-            headers: {
-              Authorization: `Bearer ${process.env.REACT_APP_GITREPOREAD}`,
-              'X-GitHub-Api-Version': '2022-11-28'
-            },
-          }
-        );
-
-        if (!response.ok) {
-          setPinnedRepos(filteredRepoData)
-        }
-        else{
-          const data = await response.json();
-          setPinnedRepos(data) ; //.filter(repo => toShowProjectsName.includes(repo.name)));
-        }
-        // const toShowProjectsName = ['ML_Hackathons-Projects','HandWritten_OCR','Video_Chat_App','Machine_Vision_Projects','ChatApp','75_Days_Hard'];
-      } catch (error) {
-        setPinnedRepos(filteredRepoData);
-      }
-    };
-
-    fetchPinnedRepos();
-  }, [username]);
+const PinnedRepos = () => {
+  const pinnedRepos = filteredRepoData;
 
   return (
     <div className='reposList row'>
@@ -73,6 +43,29 @@ const PinnedRepos = ({ username }) => {
 
 const repoData = [
   {
+    "name": "farfetch",
+    "description": "Keyboard-driven TUI REST client in Rust. Git-branch-aware environments, smart cURL import, persistent collections, all in under 15 MB of RAM.",
+    "url": "https://github.com/Tanay-27/farfetch",
+    "status": "Active",
+    "technologies": "Rust, TUI",
+    "lastUpdated": "2026-06-14"
+  },
+  {
+    "name": "anamnesis",
+    "description": "Tiered agent memory for personal health tracking. Daily logs are classified and compressed into an index, then rolled up into long-term memory behind a human review checkpoint.",
+    "url": "https://github.com/Tanay-27/anamnesis",
+    "status": "Active",
+    "technologies": "Python, FastAPI, MCP",
+    "lastUpdated": "2026-07-12"
+  },
+  {
+    "name": "truenorth",
+    "description": "Research and backtesting framework for NSE swing-trading strategies, from data import and walk-forward validation to daily screening and paper trading.",
+    "url": "https://github.com/Tanay-27/truenorth",
+    "status": "Active",
+    "technologies": "Python, Backtesting, NSE data",
+    "lastUpdated": "2026-05-07"
+  },  {
     "name": "AI Mobile Security Analyzer",
     "description": "Automated framework to analyze Android apps for advanced runtime protection mechanisms like RASP, anti-tampering, instrumentation detection. Uses Python, Frida, LLM Workflows, and Containerized Sandbox for large-scale security assessments.",
     "url": "https://github.com/Tanay-27",

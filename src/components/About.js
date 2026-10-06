@@ -13,14 +13,16 @@ function About() {
               <div className="professional-summary">
                 <h3>Professional Summary</h3>
                 <p>
-                  Experienced software engineer with 4.5+ years of experience mainly in Python backend development, 
-                  recently focused on applied AI and application security. I've worked on AI-driven systems including 
-                  large-scale mobile app detection pipelines, assisted security testing workflows, and tools to validate 
-                  vulnerabilities and reduce false positives.
+                  Backend engineer with 5+ years of experience across full-stack and Python backend development, 
+                  now focused on applied AI and application security. I build the right context for LLM reasoning and 
+                  wrap it in agentic harnesses (LangGraph), sandboxes, and automated verification, turning noisy 
+                  security signals into validated findings and fixes that enterprise teams can act on.
                 </p>
                 <p>
-                  Comfortable with Django, API design, containerized environments, vector databases, and ML-based feature 
-                  engineering. My prior MEAN stack experience enables end-to-end product development when required.
+                  My work spans AI-driven vulnerability validation, automated remediation, MCP-based IDE integration, an 
+                  AI-assisted pentesting framework, and a mobile threat intelligence pipeline covering 3M+ apps. I'm 
+                  comfortable owning delivery end to end, from API design and async workers to vector search, 
+                  containerization, and deployment, backed by prior MEAN stack experience.
                 </p>
               </div>
               
@@ -29,15 +31,15 @@ function About() {
                 <div className="expertise-grid">
                   <div className="expertise-item">
                     <h4>Backend Development</h4>
-                    <p>Python, Django, Node.js, REST APIs, TypeScript</p>
+                    <p>Python, Django, Node.js, TypeScript, PostgreSQL, Redis, Celery, REST APIs</p>
                   </div>
                   <div className="expertise-item">
                     <h4>Applied AI & ML</h4>
-                    <p>LLM Application Development, LangGraph, Gemini API, Feature Engineering, Vector Databases</p>
+                    <p>Agentic Harnesses, LangGraph, RAG Pipelines, Vector Search (Qdrant), Feature Engineering, Gemini API</p>
                   </div>
                   <div className="expertise-item">
                     <h4>Application Security</h4>
-                    <p>SAST/DAST Concepts, Mobile App Security, Pentesting Automation, Vulnerability Analysis</p>
+                    <p>SAST/DAST Tooling, Mobile App Security, Pentesting Automation, Vulnerability Analysis</p>
                   </div>
                   <div className="expertise-item">
                     <h4>Infrastructure & DevOps</h4>
@@ -65,6 +67,8 @@ function About() {
                     <div className="skills-grid">
                       <SkillBar name="LLM Development" level={8} />
                       <SkillBar name="LangGraph" level={7} />
+                      <SkillBar name="Agent Harnesses" level={8} />
+                      <SkillBar name="RAG Pipelines" level={7} />
                       <SkillBar name="Vector Databases" level={7} />
                       <SkillBar name="Feature Engineering" level={8} />
                       <SkillBar name="Gemini API" level={7} />

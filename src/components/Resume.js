@@ -11,7 +11,7 @@ const workExpData = [
     designation:"Software Development Engineer (SDE-2)",
     duration:"April 2024 - Present",
     skills:"Python, Applied AI, Docker, Kubernetes, Qdrant, LangGraph",
-    details:"Working on mobile application security platforms, focusing on automation of pen-testing, vulnerability validation, and advanced security analysis workflows. Built large-scale fake app detection pipeline processing 3M+ mobile apps using metadata feature engineering, similarity scoring, and vector database search. Developing AI-based validation agents to reduce false positives in SAST/DAST scans and generate remediation guidance."
+    details:"Engineered and deployed an AI-driven vulnerability validation platform on LangGraph that automates SAST/DAST signal analysis to eliminate false positives for enterprise client workflows. Built an automated remediation engine that turns complex findings into context-aware code patches and developer guidance, and designing an MCP integration to push fixes straight into developer IDEs. Developed an AI-assisted pentesting framework on sandboxed, containerized environments so developers can run guided dynamic tests without deep offensive security expertise. Engineered a mobile threat intelligence pipeline processing 3M+ apps across global app stores (metadata feature engineering, logo similarity models, vector search). Designed public-facing REST APIs and async worker architectures so enterprise customers can integrate security scans into their CI/CD pipelines."
   },
   {
     company:"LTIMindtree",

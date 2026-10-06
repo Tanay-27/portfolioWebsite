@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import './Contact.scss';
-import { faPaperPlane,faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Contact() {
@@ -67,7 +67,6 @@ function ContactMe() {
 function ContactInfo() {
   return (
     <div className="contactInfo">
-        <ContactItem icon={faPhone} details={9653198978} />
         <ContactItem icon={faEnvelope} details={'tanayshah027@gmail.com'} />
         <div className='socialBtns'>
       <SocialButton

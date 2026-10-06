@@ -24,8 +24,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          REACT_APP_GITREPOREAD: ${{ secrets.REACT_APP_GITREPOREAD }}
 
       - name: Deploy to GitHub Pages
         run: |

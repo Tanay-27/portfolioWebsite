@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 function Home() {
-    const text = useTypingEffect("I'm a Software Engineer with 4.5+ years of experience in Python backend development, Applied AI, and application security. I specialize in building AI-driven systems, mobile app security platforms, and scalable backend solutions. I thrive on exploring new and challenging terrains—both in code and the real world.");
+    const text = useTypingEffect("I'm a Software Engineer with 5+ years of experience in Python backends, applied AI, and application security. I take LLM agents out of the demo and into customers' real pipelines: validating vulnerabilities, shipping fixes into IDEs and CI/CD. I thrive on exploring new and challenging terrains—both in code and the real world.");
   return (
     <div className="homepage">
       <div className="photo">
