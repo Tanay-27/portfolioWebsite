@@ -5,7 +5,12 @@ import { experience, skills, education, achievements } from '../data/profile';
 function Resume() {
   return (
     <div className="page resume">
-      <div className="pageHeader">Resume</div>
+      <div className="resume-head">
+        <div className="pageHeader">Resume</div>
+        <a className="cta" href={`${process.env.PUBLIC_URL}/Tanay_Shah_Resume.pdf`} download>
+          Download PDF
+        </a>
+      </div>
 
       <section>
         <div className="section-label">Experience</div>

@@ -10,7 +10,6 @@ export const profile = {
     email: 'tanayshah027@gmail.com',
     github: 'https://github.com/Tanay-27',
     linkedin: 'https://www.linkedin.com/in/tanayshah27',
-    instagram: 'https://www.instagram.com/tanay.27',
   },
   now: {
     where: 'Appknox · SDE-2',

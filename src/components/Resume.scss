@@ -1,4 +1,15 @@
 .resume {
+  .resume-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 40px;
+
+    .pageHeader { margin-bottom: 0; }
+  }
+
   .role {
     display: grid;
     grid-template-columns: 190px 1fr;
